@@ -56,7 +56,7 @@ class _SignUpFormState extends State<SignUpForm> {
 
   double _formProgress = 0;
 
-  // final _formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
 
   void _showWelcomeScreen() {
     Navigator.of(context).pushNamed('/welcome');
@@ -87,6 +87,7 @@ class _SignUpFormState extends State<SignUpForm> {
   @override
   Widget build(BuildContext context) {
     return Form(
+        key: _formKey,
         onChanged: _updateFormProgress,
         child: Column(mainAxisSize: MainAxisSize.min, children: [
           // LinearProgressIndicator(value: _formProgress),
